@@ -10,7 +10,7 @@ _**Note**: If you ar using minikube you need to start tunnel to access  cluster 
 
 3) Check pod is created and running
 
-     `get po -o wide -n efk`
+     `get po -o wide -n fluent-bit-logging`
 	 
         NAME               READY   STATUS    RESTARTS   AGE   IP             NODE       NOMINATED NODE   READINESS GATES
 
