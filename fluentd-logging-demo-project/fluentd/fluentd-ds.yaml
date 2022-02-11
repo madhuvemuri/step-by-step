@@ -250,7 +250,7 @@ spec:
           - name: FLUENTD_ARGS
             value: -c /etc/fluentd-config/fluent.conf
           - name:  FLUENT_ELASTICSEARCH_HOST
-            value: "my-test-madhu.es.us-east-1.aws.found.io"
+            value: "test.elasticcloud.hostname"
           - name:  FLUENT_ELASTICSEARCH_PORT
             value: "9243"
           - name: FLUENT_ELASTICSEARCH_SCHEME
@@ -272,7 +272,7 @@ spec:
           - name: FLUENT_ELASTICSEARCH_USER
             value: "elastic"
           - name: FLUENT_ELASTICSEARCH_PASSWORD
-            value: "HpsOcE6D9BcQB1KM3Fm6KUtk"
+            value: "HpsOcE6D9dcBcQBd1KM3Fm6KUtk"
 
         resources:
           limits:
