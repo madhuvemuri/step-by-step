@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logging-demo
+spec:
+  selector:
+    matchLabels:
+      app: logging-demo
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: logging-demo
+    spec:
+      volumes:
+      - name: logs
+        hostPath:
+          path: /var/log/demoapp
+      containers:
+      - name: logging-demo
+        image: dockerrepo-name/logging-demo
+        imagePullPolicy: Always
+        ports:
+        - name: logging-demo
+          containerPort: 8080
+          protocol: TCP
+        volumeMounts:
+        - name: logs
+          mountPath: /var/log/demoapp
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: logging-demo-lb
+  labels:
+    app: logging-demo
+  annotations:
+    service.beta.kubernetes.io/oci-load-balancer-shape: "flexible"
+    service.beta.kubernetes.io/oci-load-balancer-shape-flex-min: "10"
+    service.beta.kubernetes.io/oci-load-balancer-shape-flex-max: "100"
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+  selector:
+    app: logging-demo
