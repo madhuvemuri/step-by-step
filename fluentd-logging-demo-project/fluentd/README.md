@@ -8,7 +8,7 @@ _**Note**: This project implemented to send the logs to elastic cloud. You need 
 1) `kubectl apply -f ns.yaml` (Namespace efk created)
 2) `kubectl apply -f fluentd-ds.yaml` (fluentd deamonset created efk created)
 3) Check pod is created and running
-     `get po -o wide -n efk`
+     `get po -o wide -n fluentd-logging`
 	 
       NAME               READY   STATUS    RESTARTS   AGE   IP             NODE       NOMINATED NODE   READINESS GATES
       fluentd-wt6wk      1/1     Running   0          38m   192.168.49.2   minikube   <none>           <none>
