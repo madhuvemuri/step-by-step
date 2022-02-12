@@ -1,6 +1,7 @@
 How to apply
 ----------------
 _**Note**: If you ar using minikube you need to start tunnel to access  cluster from outside_
+
 `minikube tunnel`
 
 _**Note**: This project implemented to send the logs to elastic cloud. You need to change the hostname and credential(if there are any) in the fluentd-ds.yaml environment values
